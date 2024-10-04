@@ -1,0 +1,48 @@
+<main class="grid grid-nogutter h-screen">
+  <section class="col-8 bg-primary-reverse">
+    <img
+      class="w-full h-full object-fit-cover bg-no-repeat"
+      src="assets/images/auth-background.png"
+      alt=""
+    />
+  </section>
+  <section
+    class="col-4 flex flex-column align-items-center justify-content-center gap-6 h-full"
+  >
+    <div class="bg-white flex flex-column justify-content-center w-9 px-2 py-6 border-round-2xl gap-4">
+      <div class="mx-4">
+        <h1 class=>Cadastre-se</h1>
+        <small>para acessar a plataforma</small>
+      </div>
+
+      <form
+        [formGroup]="formGroup"
+        (ngSubmit)="onSubmit()"
+        class="flex flex-column align-items-center gap-5 px-6 w-full"
+      >
+        <div class="flex flex-column gap-2 w-full">
+          <label for="email">E-mail<span>*</span> </label>
+          <input type="text" pInputText formControlName="email" id="email" />
+        </div>
+
+        <div class="flex flex-column justify-content-center gap-2 w-full">
+          <label for="password">Senha<span>*</span> </label>
+          <p-password formControlName="password"
+          styleClass="p-password p-component p-inputwrapper p-input-icon-right" 
+          [style]="{'width':'100%'}" [inputStyle]="{'width':'100%'}" />
+          <a class="align-self-end" href="">Esqueceu a senha?</a>
+        </div>
+
+        <p-button type="submit" (onClick)="onSubmit()" [loading]="isLoading"
+        [disabled]="isLoading || formGroup.invalid">Acessar</p-button>
+      </form>
+
+      
+    </div>
+    
+    <div class="flex flex-column gap-2 align-items-center justify-content-center px-6 mt-6">
+        <p>Não possui uma conta?</p>
+        <p-button (onClick)="navigateToRegister()">Crie uma conta</p-button>
+      </div>
+  </section>
+</main>

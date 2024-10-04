@@ -13,3 +13,15 @@
   padding: 0;
   margin: 0;
 }
+
+// Overrides
+
+p-button {
+  align-self: stretch;
+  text-align: center;
+
+  button {
+    justify-content: center;
+    width: 100%;
+  }
+}
