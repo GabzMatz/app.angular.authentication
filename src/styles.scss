@@ -1,0 +1,15 @@
+@import "./theme.css";
+
+// Font
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap");
+
+// Primefaces
+@import "primeng/resources/primeng.css";
+@import "primeflex/primeflex.css";
+@import "primeicons/primeicons.css";
+
+* {
+  font-family: "Montserrat", sans-serif;
+  padding: 0;
+  margin: 0;
+}
