@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 import { Observable, Subject, firstValueFrom } from 'rxjs';
 import { AsyncResult } from './models/async-result';
 import { ExtraOptions } from './models/http-options';
+import { HTTP_ASYNC_CONFIG } from './models/injection-tokens';
 
 //#endregion
 
