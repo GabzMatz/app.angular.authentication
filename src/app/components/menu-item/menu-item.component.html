@@ -1,0 +1,16 @@
+<li class="list-none">
+  <div
+    (click)="onClick()"
+    class="relative flex align-items-center border-round py-1 px-3 cursor-pointer transition-all transition-duration-150"
+    [class.bg-gray-200]="isTheActiveRoute"
+  >
+    <div
+      *ngIf="isTheActiveRoute"
+      class="absolute left-0 my-auto bg-primary border-round-xl fadeinleft"
+      [style.height]="'60%'"
+      [style.width.px]="3"
+    ></div>
+    <i class="text-color pi {{ item.icon }} mr-1"></i>
+    <span class="text-color select-none">{{ item.title }}</span>
+  </div>
+</li>

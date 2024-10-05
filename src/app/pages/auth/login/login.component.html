@@ -1,0 +1,70 @@
+<main class="grid grid-nogutter h-screen">
+  <section class="relative col-7 bg-primary-reverse">
+    <div
+      class="absolute flex flex-column justify-content-center align-self-center h-screen top-0 gap-3 w-7 left-20"
+    >
+      <img class="w-15rem" src="assets/logo.svg" alt="Logotipo" />
+      <h1 class="text-0 text-5xl">Faça parte da nossa equipe</h1>
+      <p class="text-0 text-2xl">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident,
+        maxime impedit quis qui laborum optio eius unde delectus a
+        exercitationem inventore corrupti cupiditate illum fugiat aliquam ipsam
+        quidem laboriosam minus?
+      </p>
+    </div>
+    <img
+      class="w-full h-full object-fit-cover bg-no-repeat"
+      src="assets/images/auth-background.png"
+      alt="Imagem de fundo - cidade em tons vermelhos"
+    />
+  </section>
+  <section
+    class="col-5 flex flex-column align-items-center justify-content-center gap-4 h-full"
+  >
+    <div class="bg-white flex flex-column justify-content-center w-8 px-2 py-6 border-round-2xl gap-4"
+    >
+      <div class="mx-4">
+        <h1 class="text-3xl">Entre</h1>
+        <small>para acessar a plataforma</small>
+      </div>
+
+      <form
+        [formGroup]="formGroup"
+        (ngSubmit)="onSubmit()"
+        class="flex flex-column align-items-center gap-5 px-6 w-full"
+      >
+        <div class="flex flex-column gap-2 w-full">
+          <label for="email">E-mail<span>*</span> </label>
+          <input type="text" pInputText formControlName="email" id="email" />
+        </div>
+
+        <div class="flex flex-column justify-content-center gap-2 w-full">
+          <label for="password">Senha<span>*</span> </label>
+          <p-password
+            formControlName="password"
+            styleClass="p-password p-component p-inputwrapper p-input-icon-right"
+            [style]="{ width: '100%' }"
+            [inputStyle]="{ width: '100%' }"
+            [feedback]="false"
+            [toggleMask]="true"
+          />
+          <a class="align-self-end" href="">Esqueceu a senha?</a>
+        </div>
+
+        <p-button
+          type="submit"
+          [loading]="isLoading"
+          [disabled]="isLoading || formGroup.invalid"
+          >Acessar</p-button
+        >
+      </form>
+    </div>
+
+    <div
+      class="flex flex-column gap-2 align-items-center justify-content-center px-6 mt-6"
+    >
+      <p>Não possui uma conta?</p>
+      <p-button type="" (onClick)="navigateToRegister()">Crie uma conta</p-button>
+    </div>
+  </section>
+</main>

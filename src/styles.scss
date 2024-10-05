@@ -1,0 +1,55 @@
+@import "./theme.css";
+
+// Font
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap");
+
+// Primefaces
+@import "primeng/resources/primeng.css";
+@import "primeflex/primeflex.css";
+@import "primeicons/primeicons.css";
+
+* {
+  font-family: "Montserrat", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+// Overrides
+
+p-button {
+  align-self: stretch;
+  text-align: center;
+
+  button {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+p-breadcrumb {
+  .p-menuitem-text,
+  .p-menuitem-icon {
+    color: var(--text-color) !important;
+  }
+}
+
+.p-breadcrumb {
+  border: none !important;
+}
+
+.p-datatable-wrapper {
+  border-radius: 1rem;
+}
+
+eyeicon, eyeslashicon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 0;
+}
+
+// Custom classes
+
+.left-20 {
+  left: 20%;
+}
