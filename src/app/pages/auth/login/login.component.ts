@@ -4,7 +4,8 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginPayload } from '../../../models/payloads/login.payload';
-import { AuthService } from '../../../services/auth/auth.service';
+import { AuthService } from '../../../services/auth.service';
+import { MessageService } from 'primeng/api';
 
 //#endregion
 
@@ -17,6 +18,7 @@ export class LoginComponent {
     private readonly router: Router,
     private readonly formBuilder: FormBuilder,
     private readonly authService: AuthService,
+    private messageService: MessageService
   ) {
     this.formGroup = this.formBuilder.group({
       email: ['', Validators.required],
@@ -42,11 +44,18 @@ export class LoginComponent {
     this.isLoading = true;
 
     try {
-      await this.authService.login(payload);
-
-      console.log('Sucesso!')
+      await this.authService.login(payload.email, payload.password).subscribe({
+        next: async () => await this.navigateToUsers(),
+        error: (error) => {
+          this.messageService.add({
+            severity: 'error',
+            summary: 'Opss...',
+            detail: 'Não foi possível logar: ' + error.message,
+            life: 3000,
+          });
+        },
+      });
     } catch (error: unknown) {
-      console.log('Error!')
     } finally {
       this.isLoading = false;
     }
@@ -54,6 +63,10 @@ export class LoginComponent {
 
   public async navigateToRegister(): Promise<void> {
     this.router.navigate(['register']);
+  }
+
+  public async navigateToUsers(): Promise<void> {
+    this.router.navigate(['pages/users']);
   }
 
   //#endregion

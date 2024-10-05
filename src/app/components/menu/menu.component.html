@@ -1,0 +1,23 @@
+<div class="h-full pt-5 pb-4 px-3">
+  <div class="flex flex-column justify-content-between h-full">
+    <div>
+      <p class="text-600 ml-3 mb-3">Páginas</p>
+
+      <div class="flex flex-column row-gap-1">
+        <app-menu-item *ngFor="let item of items" [item]="item">
+        </app-menu-item>
+      </div>
+    </div>
+
+    <div class="flex flex-column gap-1">
+      <app-menu-item
+        (click)="openLogoutConfirmation($event)"
+        [item]="signOutMenu"
+      >
+      </app-menu-item>
+      <p-confirmPopup />
+    </div>
+  </div>
+</div>
+
+<p-toast />

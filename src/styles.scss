@@ -26,6 +26,28 @@ p-button {
   }
 }
 
+p-breadcrumb {
+  .p-menuitem-text,
+  .p-menuitem-icon {
+    color: var(--text-color) !important;
+  }
+}
+
+.p-breadcrumb {
+  border: none !important;
+}
+
+.p-datatable-wrapper {
+  border-radius: 1rem;
+}
+
+eyeicon, eyeslashicon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 0;
+}
+
 // Custom classes
 
 .left-20 {

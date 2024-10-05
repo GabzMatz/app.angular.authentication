@@ -45,13 +45,14 @@
             styleClass="p-password p-component p-inputwrapper p-input-icon-right"
             [style]="{ width: '100%' }"
             [inputStyle]="{ width: '100%' }"
+            [feedback]="false"
+            [toggleMask]="true"
           />
           <a class="align-self-end" href="">Esqueceu a senha?</a>
         </div>
 
         <p-button
           type="submit"
-          (onClick)="onSubmit()"
           [loading]="isLoading"
           [disabled]="isLoading || formGroup.invalid"
           >Acessar</p-button
@@ -63,7 +64,7 @@
       class="flex flex-column gap-2 align-items-center justify-content-center px-6 mt-6"
     >
       <p>Não possui uma conta?</p>
-      <p-button (onClick)="navigateToRegister()">Crie uma conta</p-button>
+      <p-button type="" (onClick)="navigateToRegister()">Crie uma conta</p-button>
     </div>
   </section>
 </main>

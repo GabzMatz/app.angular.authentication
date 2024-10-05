@@ -1,0 +1,23 @@
+<main
+  #header
+  class="flex align-items-center h-6rem pr-3 surface-card relative"
+  style="z-index: 999 !important;"
+>
+  <div
+    class="flex align-items-center min-w-max px-3 justify-content-center"
+  >
+    <img
+      routerLink="#"
+      class="w-5rem mr-6 cursor-pointer"
+      alt="Logotipo escuto"
+      src="assets/logo-black.svg"
+    />
+  </div>
+
+  <div class="card flex justify-content-center">
+    <p-breadcrumb
+      class="max-w-full text-base primary-color border-none ml-8"
+      [model]="breadcrumbs"
+    ></p-breadcrumb>
+  </div>
+</main>
