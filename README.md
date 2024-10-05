@@ -23,7 +23,7 @@ https://github.com/user-attachments/assets/b1e2b6a7-f3e3-4ce4-95f6-b88271df82c2
 ### Frontend (Angular)
 
 - **Tela de Login**: Formulário simples para inserção de credenciais.
-- **Tela de Login**: Formulário simples para inserção de dados.
+- **Tela de Cadastro**: Formulário simples para inserção de dados.
 - **Listagem de Usuários**: Exibe os usuários, com opções de edição e exclusão disponíveis para administradores.
 - **Serviços**: Comunicação com o backend para autenticação e operações com usuários.
 
